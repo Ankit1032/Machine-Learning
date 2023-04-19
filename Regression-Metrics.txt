@@ -1,0 +1,64 @@
+1. Mean Squared Error (MSE): MSE measures the average squared difference between the forecasted values and the actual values. It's calculated as follows:
+
+MSE = (1/n) * Σ(f_i - y_i)^2
+
+where n is the number of observations, f_i is the forecasted value at time i, and y_i is the actual value at time i. MSE gives higher weightage to larger errors.
+
+Example: Suppose we have a time series with actual values and forecasted values as follows:
+
+Actual Values: [10, 20, 30, 40, 50]
+Forecasted Values: [15, 25, 35, 45, 55]
+
+Using the MSE formula, we get:
+
+MSE = (1/5) * [(15-10)^2 + (25-20)^2 + (35-30)^2 + (45-40)^2 + (55-50)^2] = 50
+
+The MSE for this example is 50.
+
+---------------------------------------------------------------
+
+2. Root Mean Squared Error (RMSE): RMSE is the square root of the MSE, which measures the average difference between the forecasted values and the actual values, but in the same units as the original data. It's calculated as follows:
+
+RMSE = sqrt(MSE)
+
+Example: Continuing with the previous example, the RMSE is:
+
+RMSE = sqrt(50) = 7.07
+
+The RMSE for this example is 7.07.
+
+-------------------------------------------------------------------------------------
+
+3. Mean Absolute Error (MAE): MAE measures the average absolute difference between the forecasted values and the actual values. It's calculated as follows:
+
+MAE = (1/n) * Σ|f_i - y_i|
+
+where n is the number of observations, f_i is the forecasted value at time i, and y_i is the actual value at time i. MAE gives equal weightage to all errors.
+
+Example: Using the same time series data as before, the MAE is:
+
+MAE = (1/5) * [|15-10| + |25-20| + |35-30| + |45-40| + |55-50|] = 5
+
+The MAE for this example is 5.
+
+-----------------------------------------------------------------------------------------
+
+4. Mean Absolute Percentage Error (MAPE): MAPE measures the percentage difference between the forecasted values and the actual values. It's calculated as follows:
+
+MAPE = (1/n) * Σ(|(y_i - f_i)/y_i|) * 100
+
+where n is the number of observations, f_i is the forecasted value at time i, and y_i is the actual value at time i.
+
+Example: Continuing with the previous example, suppose the actual values are:
+
+Actual Values: [10, 0, 30, 40, 50]
+
+and the forecasted values are the same as before:
+
+Forecasted Values: [15, 25, 35, 45, 55]
+
+Using the MAPE formula, we get:
+
+MAPE = (1/5) * [(|10-15|/10 + |0-25|/0 + |30-35|/30 + |40-45|/40 + |50-55|/50) * 100] = Inf
+
+The MAPE for this example is infinity because division by zero occurred. This is a limitation of MAPE as a metric and why it should be used with caution, especially when the actual values can be zero
